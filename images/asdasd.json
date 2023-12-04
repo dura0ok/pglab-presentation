@@ -1,0 +1,479 @@
+[
+  {
+    "windows": {
+      "1": {
+        "1": {
+          "id": 1,
+          "index": 0,
+          "windowId": 1,
+          "highlighted": true,
+          "active": true,
+          "attention": false,
+          "pinned": false,
+          "status": "complete",
+          "hidden": false,
+          "discarded": false,
+          "incognito": false,
+          "width": 1920,
+          "height": 923,
+          "lastAccessed": 1701349043144,
+          "audible": false,
+          "autoDiscardable": true,
+          "mutedInfo": {
+            "muted": false
+          },
+          "isInReaderMode": false,
+          "sharingState": {
+            "camera": false,
+            "microphone": false
+          },
+          "successorTabId": -1,
+          "cookieStoreId": "firefox-default",
+          "url": "https://www.youtube.com/feed/subscriptions",
+          "title": "(4) Подписки - YouTube",
+          "favIconUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtklEQVQ4T2NkoBAwUqifAW7AfwYGAaBhBlADHXAYfAAqfgGo8QOIDTYAqDkBSM0n0TWJQM0LGIGaQbaeJ1EzTLkhyIAAIG89mQYkggxoAGqux2rAgwdAzwF9dwDmdQxVjfgN+A80HgQ2bmRgKChgYAAZiAqINODgQYhLSDYApAFk84YNuIII7ALcgSgATBofwNGNC4ADkbJoBBlNUUKCuQ0tKYNcBUra6AAWn6hJGZ8nCclRnBsBzJ03KZWC+NsAAAAASUVORK5CYII="
+        },
+        "3": {
+          "id": 3,
+          "index": 9,
+          "windowId": 1,
+          "highlighted": false,
+          "active": false,
+          "attention": false,
+          "pinned": false,
+          "status": "complete",
+          "hidden": false,
+          "discarded": false,
+          "incognito": false,
+          "width": 1920,
+          "height": 923,
+          "lastAccessed": 1701348972095,
+          "audible": false,
+          "autoDiscardable": true,
+          "mutedInfo": {
+            "muted": false
+          },
+          "isArticle": false,
+          "isInReaderMode": false,
+          "sharingState": {
+            "camera": false,
+            "microphone": false
+          },
+          "successorTabId": -1,
+          "cookieStoreId": "firefox-default",
+          "url": "https://vk.com/im?sel=180204647",
+          "title": "Телеграф",
+          "favIconUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABcklEQVRYR+1XMVICQRCc1YQQfnC8QC0/YGBqwAvwB0oiVyZiYkGmPzjKJ2ho4AO04AcQkXKZJrJy07MEd2DtAnVDlWxwfUzNQE8zOztryK1be8yvM7oS0xmjpap8drgI8XwZsp8hINE9P7tmDLM6gdhGkunIM6PtuB3SCRTYAQKJKNDcTmqe32KIfzdTQJnAjR1IlWIXlLUMyS5QJ9C2dlnSzVNYHy+A1UqYNOMp/DtvwP5nIT5FDewqgVEbjKNaWOZ57/QLlhr6X2GtVECdgO1ulnk+2sSBCuwJ7BVQV2DaQdWGdsB8rbuOWO8F7gJ1ApdyFtydr9cR02/EtV6ASfEsYPvKTlgmATm3FtPvny0wX5zDCdwbz0D3n/v20UwBZQKxxTRsKfJh7Yqz/wHv61efqKU+fE/IZkJ1Aoko8F+nYncn/CFMx2UtQ3XUgDoBl7G7os0HWTbN6IjR0Lr3BZ565/FAond+HtAT44ORXaBM4Bd1RL9fr8G2jgAAAABJRU5ErkJggg=="
+        },
+        "4": {
+          "id": 4,
+          "index": 10,
+          "windowId": 1,
+          "highlighted": false,
+          "active": false,
+          "attention": false,
+          "pinned": false,
+          "status": "complete",
+          "hidden": false,
+          "discarded": false,
+          "incognito": false,
+          "width": 1920,
+          "height": 923,
+          "lastAccessed": 1701347791320,
+          "audible": false,
+          "autoDiscardable": true,
+          "mutedInfo": {
+            "muted": false
+          },
+          "isArticle": true,
+          "isInReaderMode": false,
+          "sharingState": {
+            "camera": false,
+            "microphone": false
+          },
+          "successorTabId": -1,
+          "cookieStoreId": "firefox-default",
+          "openerTabId": 3,
+          "url": "https://vk.com/yana.lerman",
+          "title": "Ало, Яночка",
+          "favIconUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAPFBMVEUAd/////8AAABAmf8Ad/97uP+Hv/+Dvf/z+P+v1P/P5f8Ie//D3//j8P8chf+Xx/9Hnf/7/P+Lwf9Ln/97L6uxAAAAFHRSTlP//wD/U////////////////////x/Rm3wAAACZSURBVHicvZPZEoAgCEW1zfb1//81QU1HUR6aui8U90jQiKhAjSDUoAUA5RoZIO8DIYq+JniA7M+Lsf/UIqXEBx1rG03CaiOAPQTWCIgLYKbzAPhTAuARBOBliLoMAJRK5rCE9dt0UEjPvkLU4lMce+hoonVn9RQnSSgPiEvHI/MV+lc79Q4AYqSIT8Re2vd7wa8ev7zl9b8B5JQB7sf+/2YAAAAASUVORK5CYII="
+        },
+        "5": {
+          "id": 5,
+          "index": 11,
+          "windowId": 1,
+          "highlighted": false,
+          "active": false,
+          "attention": false,
+          "pinned": false,
+          "status": "complete",
+          "hidden": false,
+          "discarded": false,
+          "incognito": false,
+          "width": 1920,
+          "height": 923,
+          "lastAccessed": 1701348108123,
+          "audible": false,
+          "autoDiscardable": true,
+          "mutedInfo": {
+            "muted": false
+          },
+          "isArticle": true,
+          "isInReaderMode": false,
+          "sharingState": {
+            "camera": false,
+            "microphone": false
+          },
+          "successorTabId": -1,
+          "cookieStoreId": "firefox-default",
+          "openerTabId": 3,
+          "url": "https://vk.com/roxolanacosplay",
+          "title": "Roxolana Ridel",
+          "favIconUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAPFBMVEUAd/////8AAABAmf8Ad/97uP+Hv/+Dvf/z+P+v1P/P5f8Ie//D3//j8P8chf+Xx/9Hnf/7/P+Lwf9Ln/97L6uxAAAAFHRSTlP//wD/U////////////////////x/Rm3wAAACZSURBVHicvZPZEoAgCEW1zfb1//81QU1HUR6aui8U90jQiKhAjSDUoAUA5RoZIO8DIYq+JniA7M+Lsf/UIqXEBx1rG03CaiOAPQTWCIgLYKbzAPhTAuARBOBliLoMAJRK5rCE9dt0UEjPvkLU4lMce+hoonVn9RQnSSgPiEvHI/MV+lc79Q4AYqSIT8Re2vd7wa8ev7zl9b8B5JQB7sf+/2YAAAAASUVORK5CYII="
+        },
+        "6": {
+          "id": 6,
+          "index": 12,
+          "windowId": 1,
+          "highlighted": false,
+          "active": false,
+          "attention": false,
+          "pinned": false,
+          "status": "complete",
+          "hidden": false,
+          "discarded": false,
+          "incognito": false,
+          "width": 1920,
+          "height": 923,
+          "lastAccessed": 1701348377812,
+          "audible": false,
+          "autoDiscardable": true,
+          "mutedInfo": {
+            "muted": false
+          },
+          "isArticle": false,
+          "isInReaderMode": false,
+          "sharingState": {
+            "camera": false,
+            "microphone": false
+          },
+          "successorTabId": -1,
+          "cookieStoreId": "firefox-default",
+          "url": "https://github.com/microsoft/vscode/issues/140185",
+          "title": "Alt + Click to open (or follow) the link · Issue #140185 · microsoft/vscode",
+          "favIconUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADdklEQVRYR71X7VHbQBDdk4zH/ApUEDEmGTMZO6YCcAWQCuJUgKkA0wFUEFJBnAowFSDsZFASOygVxPmFByxfds+SOEl3OhmY3Ix/WNq7fff27YcYLLGqr+v7YMEeA3CAsTXc2gy3u8D5hAP4jENv9H34peixeFb+cmo1x4aVI3S4j8bk1LgQyAQB9YKpfej77iRvQy6AzVqjyxkcFHWcdkRAkJGTkTc41oFQAnCc5lppdX4uUWy8tcHAnd1aLRUbGQDOqzdNu2SfP/bWOiDERjALWv7Pb65skwBAN7dX5zfP7TxyKEDcWhsyEzEAJe2cX+EmFwW4i4Yvl4kD5/AXgPfCjNmR9rqj68F29D8GQIIDBkeyE875h7E3PKNn1Vq9jUC6MRDOLxK2wJqMwYvQcSfeh6nLbPY5AZ7DMQqzS88EAJFqrHyZoZ7PWyPvaz/aTCzByr2TjmP8Hs+BaWUiU0xnl1j5Jgn2IRQCAN7ujDH2PkNxCsAyIZBBY0b9yaQo55+QpXYIoDEh+hRGcQge41xcThUCfE6CHF8P1pnWAEUUTC3HVMlMwMLMclUi5gF/x3T0ywI0OTG9JwFjiD9mGAY4ZZu1eh/VLaeJsMPKtf7U28sON7cayHpqYSYRAMrztwmVIv1jb1Co8ZhuH73XXNRlKmSYyz4C2Ch6eBE7HdNKAHQgVitjqy7iOLKpbjV8lRCZ7sX/0ACK4rdWhM+aBZpagEPLBTFwgtQcKBTaH3nD1jI062x18UcGTrWFiA6bAxz+uh6cPAWErgbQmaIQiUpVmfuqUiwcc+jmjVR54FQdNrKnrkmVNtuMsFXyOXeZBdieF/WB0pIx3kMwPQxLog2nAdBEZVn2Dl6ogz9HB5Dox17Qidtx1DKj0QnuV/xSJaAqmShSiOYKQUTjeOL86lYdBxC2VyRkM3634XsepeZiyXQJEPxOTC02lF05PBS38Y9hT+WEbl8q2ZdGAOmB5AHEQ1nGNBT9WgwUUG4v5MCxQi4mJN1S1nzZOMVgdiiVBDmbBdu66ecxACLhKYfS6EAxltt2P6IdmTjDuPrRe1NG6BgQzoNgN3csj0HQh4lKgGhg6hGatns1m9q7hT5MZGpVebw0AElwqrAZO144MXdQgUKIpjmhWmuEH6P4cQr3XUq1PNEaAchhgcp0zXQgAU6P5nkA/gEVLspa51VkdgAAAABJRU5ErkJggg=="
+        },
+        "7": {
+          "id": 7,
+          "index": 13,
+          "windowId": 1,
+          "highlighted": false,
+          "active": false,
+          "attention": false,
+          "pinned": false,
+          "status": "complete",
+          "hidden": false,
+          "discarded": false,
+          "incognito": false,
+          "width": 1920,
+          "height": 923,
+          "lastAccessed": 1701348958601,
+          "audible": false,
+          "autoDiscardable": true,
+          "mutedInfo": {
+            "muted": false
+          },
+          "isInReaderMode": false,
+          "sharingState": {
+            "camera": false,
+            "microphone": false
+          },
+          "successorTabId": -1,
+          "cookieStoreId": "firefox-default",
+          "url": "about:newtab",
+          "title": "Новая вкладка",
+          "favIconUrl": "chrome://branding/content/icon32.png"
+        },
+        "8": {
+          "id": 8,
+          "index": 1,
+          "windowId": 1,
+          "highlighted": false,
+          "active": false,
+          "attention": false,
+          "pinned": false,
+          "status": "complete",
+          "hidden": false,
+          "discarded": false,
+          "incognito": false,
+          "width": 1920,
+          "height": 923,
+          "lastAccessed": 1701348987867,
+          "audible": false,
+          "autoDiscardable": true,
+          "mutedInfo": {
+            "muted": false
+          },
+          "isInReaderMode": false,
+          "sharingState": {
+            "camera": false,
+            "microphone": false
+          },
+          "successorTabId": -1,
+          "cookieStoreId": "firefox-default",
+          "openerTabId": 1,
+          "url": "https://www.youtube.com/watch?v=6gyaErz15OA",
+          "title": "Фандом Фест 2023 | Fandom Fest 2023 - Cosplay Music Video / Косплей (4K UHD) - YouTube",
+          "favIconUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAflBMVEX/AAAAAAD////+AAD+AAD+AAD/AAD+AAD/AAD/AAD+AAD+AAD+AAD/AAD/AAD/AAD/AAD+AAD/Kyv/7e3/iYn+AAD/2Nj/eHj/AAD/AAD/Cwv/AAD/Pz///v7/5ub+AAD/AAD+AAD/AAD/8vL/AAD+AAD+AAD/AAD+AAD/Dg7DffOXAAAAKnRSTlP/AP/+5+/AlgXJc9e33ir7Clf///+o//8hif8v////8zjPff8/7OIu1P82uCqHAAAApklEQVR4nM2TVxKDMAxENzIxhARMeu/9/heMmTCDbED+Zf/kfTNWxSCg3gDFexrrCLWi6zJ95EUFbJnjaVICcbcPaAtIPqydyECCVAZu0DycNYARxjykuQ+8wMsHEa1d4IyhB9Bxx19UEyA6hQA6yMDK/cJPkr5OkgaZCyzcIvC0nWC6ezZsm8Rh2oFjIwOX8LhlQJUrZ7p981/a/KNa7Wzfp8uS9ANtKQW43u47XgAAAABJRU5ErkJggg=="
+        },
+        "9": {
+          "id": 9,
+          "index": 2,
+          "windowId": 1,
+          "highlighted": false,
+          "active": false,
+          "attention": false,
+          "pinned": false,
+          "status": "complete",
+          "hidden": false,
+          "discarded": false,
+          "incognito": false,
+          "width": 1920,
+          "height": 923,
+          "lastAccessed": 1701348989303,
+          "audible": false,
+          "autoDiscardable": true,
+          "mutedInfo": {
+            "muted": false
+          },
+          "isInReaderMode": false,
+          "sharingState": {
+            "camera": false,
+            "microphone": false
+          },
+          "successorTabId": -1,
+          "cookieStoreId": "firefox-default",
+          "openerTabId": 1,
+          "url": "https://www.youtube.com/watch?v=4CJRM7j9qbM",
+          "title": "Программист должен работать 2 часа в день! - YouTube",
+          "favIconUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtklEQVQ4T2NkoBAwUqifAW7AfwYGAaBhBlADHXAYfAAqfgGo8QOIDTYAqDkBSM0n0TWJQM0LGIGaQbaeJ1EzTLkhyIAAIG89mQYkggxoAGqux2rAgwdAzwF9dwDmdQxVjfgN+A80HgQ2bmRgKChgYAAZiAqINODgQYhLSDYApAFk84YNuIII7ALcgSgATBofwNGNC4ADkbJoBBlNUUKCuQ0tKYNcBUra6AAWn6hJGZ8nCclRnBsBzJ03KZWC+NsAAAAASUVORK5CYII="
+        },
+        "10": {
+          "id": 10,
+          "index": 3,
+          "windowId": 1,
+          "highlighted": false,
+          "active": false,
+          "attention": false,
+          "pinned": false,
+          "status": "complete",
+          "hidden": false,
+          "discarded": false,
+          "incognito": false,
+          "width": 1920,
+          "height": 923,
+          "lastAccessed": 1701348997030,
+          "audible": false,
+          "autoDiscardable": true,
+          "mutedInfo": {
+            "muted": false
+          },
+          "isInReaderMode": false,
+          "sharingState": {
+            "camera": false,
+            "microphone": false
+          },
+          "successorTabId": -1,
+          "cookieStoreId": "firefox-default",
+          "openerTabId": 1,
+          "url": "https://www.youtube.com/watch?v=YCsHpOVussQ",
+          "title": "Самповское хрючево - Пацанская яичница c оливками и XPEH0M!!! и козье молочко в конце - YouTube",
+          "favIconUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAflBMVEX/AAAAAAD////+AAD+AAD+AAD/AAD+AAD/AAD/AAD+AAD+AAD+AAD/AAD/AAD/AAD/AAD+AAD/Kyv/7e3/iYn+AAD/2Nj/eHj/AAD/AAD/Cwv/AAD/Pz///v7/5ub+AAD/AAD+AAD/AAD/8vL/AAD+AAD+AAD/AAD+AAD/Dg7DffOXAAAAKnRSTlP/AP/+5+/AlgXJc9e33ir7Clf///+o//8hif8v////8zjPff8/7OIu1P82uCqHAAAApklEQVR4nM2TVxKDMAxENzIxhARMeu/9/heMmTCDbED+Zf/kfTNWxSCg3gDFexrrCLWi6zJ95EUFbJnjaVICcbcPaAtIPqydyECCVAZu0DycNYARxjykuQ+8wMsHEa1d4IyhB9Bxx19UEyA6hQA6yMDK/cJPkr5OkgaZCyzcIvC0nWC6ezZsm8Rh2oFjIwOX8LhlQJUrZ7p981/a/KNa7Wzfp8uS9ANtKQW43u47XgAAAABJRU5ErkJggg=="
+        },
+        "11": {
+          "id": 11,
+          "index": 4,
+          "windowId": 1,
+          "highlighted": false,
+          "active": false,
+          "attention": false,
+          "pinned": false,
+          "status": "complete",
+          "hidden": false,
+          "discarded": false,
+          "incognito": false,
+          "width": 1920,
+          "height": 923,
+          "lastAccessed": 1701349001046,
+          "audible": false,
+          "autoDiscardable": true,
+          "mutedInfo": {
+            "muted": false
+          },
+          "isInReaderMode": false,
+          "sharingState": {
+            "camera": false,
+            "microphone": false
+          },
+          "successorTabId": -1,
+          "cookieStoreId": "firefox-default",
+          "openerTabId": 1,
+          "url": "https://www.youtube.com/watch?v=10kMSP3llWY",
+          "title": "Учусь Трюкам со Световым Мечом за 24 часа - YouTube",
+          "favIconUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtklEQVQ4T2NkoBAwUqifAW7AfwYGAaBhBlADHXAYfAAqfgGo8QOIDTYAqDkBSM0n0TWJQM0LGIGaQbaeJ1EzTLkhyIAAIG89mQYkggxoAGqux2rAgwdAzwF9dwDmdQxVjfgN+A80HgQ2bmRgKChgYAAZiAqINODgQYhLSDYApAFk84YNuIII7ALcgSgATBofwNGNC4ADkbJoBBlNUUKCuQ0tKYNcBUra6AAWn6hJGZ8nCclRnBsBzJ03KZWC+NsAAAAASUVORK5CYII="
+        },
+        "12": {
+          "id": 12,
+          "index": 5,
+          "windowId": 1,
+          "highlighted": false,
+          "active": false,
+          "attention": false,
+          "pinned": false,
+          "status": "complete",
+          "hidden": false,
+          "discarded": false,
+          "incognito": false,
+          "width": 1920,
+          "height": 923,
+          "lastAccessed": 1701349011776,
+          "audible": false,
+          "autoDiscardable": true,
+          "mutedInfo": {
+            "muted": false
+          },
+          "isInReaderMode": false,
+          "sharingState": {
+            "camera": false,
+            "microphone": false
+          },
+          "successorTabId": -1,
+          "cookieStoreId": "firefox-default",
+          "openerTabId": 1,
+          "url": "https://www.youtube.com/watch?v=nQ7zCzxLuQY",
+          "title": "Неочевидные Подводные Камни в IT (feat. Тинькофф) - YouTube",
+          "favIconUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAflBMVEX/AAAAAAD////+AAD+AAD+AAD/AAD+AAD/AAD/AAD+AAD+AAD+AAD/AAD/AAD/AAD/AAD+AAD/Kyv/7e3/iYn+AAD/2Nj/eHj/AAD/AAD/Cwv/AAD/Pz///v7/5ub+AAD/AAD+AAD/AAD/8vL/AAD+AAD+AAD/AAD+AAD/Dg7DffOXAAAAKnRSTlP/AP/+5+/AlgXJc9e33ir7Clf///+o//8hif8v////8zjPff8/7OIu1P82uCqHAAAApklEQVR4nM2TVxKDMAxENzIxhARMeu/9/heMmTCDbED+Zf/kfTNWxSCg3gDFexrrCLWi6zJ95EUFbJnjaVICcbcPaAtIPqydyECCVAZu0DycNYARxjykuQ+8wMsHEa1d4IyhB9Bxx19UEyA6hQA6yMDK/cJPkr5OkgaZCyzcIvC0nWC6ezZsm8Rh2oFjIwOX8LhlQJUrZ7p981/a/KNa7Wzfp8uS9ANtKQW43u47XgAAAABJRU5ErkJggg=="
+        },
+        "13": {
+          "id": 13,
+          "index": 6,
+          "windowId": 1,
+          "highlighted": false,
+          "active": false,
+          "attention": false,
+          "pinned": false,
+          "status": "complete",
+          "hidden": false,
+          "discarded": false,
+          "incognito": false,
+          "width": 1920,
+          "height": 923,
+          "lastAccessed": 1701349013795,
+          "audible": false,
+          "autoDiscardable": true,
+          "mutedInfo": {
+            "muted": false
+          },
+          "isInReaderMode": false,
+          "sharingState": {
+            "camera": false,
+            "microphone": false
+          },
+          "successorTabId": -1,
+          "cookieStoreId": "firefox-default",
+          "openerTabId": 1,
+          "url": "https://www.youtube.com/watch?v=svO75k0_5RQ",
+          "title": "PHP Junior: Что это за ваше ООП? - YouTube",
+          "favIconUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtklEQVQ4T2NkoBAwUqifAW7AfwYGAaBhBlADHXAYfAAqfgGo8QOIDTYAqDkBSM0n0TWJQM0LGIGaQbaeJ1EzTLkhyIAAIG89mQYkggxoAGqux2rAgwdAzwF9dwDmdQxVjfgN+A80HgQ2bmRgKChgYAAZiAqINODgQYhLSDYApAFk84YNuIII7ALcgSgATBofwNGNC4ADkbJoBBlNUUKCuQ0tKYNcBUra6AAWn6hJGZ8nCclRnBsBzJ03KZWC+NsAAAAASUVORK5CYII="
+        },
+        "14": {
+          "id": 14,
+          "index": 7,
+          "windowId": 1,
+          "highlighted": false,
+          "active": false,
+          "attention": false,
+          "pinned": false,
+          "status": "complete",
+          "hidden": false,
+          "discarded": false,
+          "incognito": false,
+          "width": 1920,
+          "height": 923,
+          "lastAccessed": 1701349018683,
+          "audible": false,
+          "autoDiscardable": true,
+          "mutedInfo": {
+            "muted": false
+          },
+          "isInReaderMode": false,
+          "sharingState": {
+            "camera": false,
+            "microphone": false
+          },
+          "successorTabId": -1,
+          "cookieStoreId": "firefox-default",
+          "openerTabId": 1,
+          "url": "https://www.youtube.com/watch?v=pxkzupsjLzM",
+          "title": "Тест кучи ДЕШЕВЫХ роллов! Славный Обзор. - YouTube",
+          "favIconUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtklEQVQ4T2NkoBAwUqifAW7AfwYGAaBhBlADHXAYfAAqfgGo8QOIDTYAqDkBSM0n0TWJQM0LGIGaQbaeJ1EzTLkhyIAAIG89mQYkggxoAGqux2rAgwdAzwF9dwDmdQxVjfgN+A80HgQ2bmRgKChgYAAZiAqINODgQYhLSDYApAFk84YNuIII7ALcgSgATBofwNGNC4ADkbJoBBlNUUKCuQ0tKYNcBUra6AAWn6hJGZ8nCclRnBsBzJ03KZWC+NsAAAAASUVORK5CYII="
+        },
+        "15": {
+          "id": 15,
+          "index": 8,
+          "windowId": 1,
+          "highlighted": false,
+          "active": false,
+          "attention": false,
+          "pinned": false,
+          "status": "loading",
+          "hidden": false,
+          "discarded": false,
+          "incognito": false,
+          "width": 1920,
+          "height": 923,
+          "lastAccessed": 1701349033306,
+          "audible": false,
+          "autoDiscardable": true,
+          "mutedInfo": {
+            "muted": false
+          },
+          "isInReaderMode": false,
+          "sharingState": {
+            "camera": false,
+            "microphone": false
+          },
+          "successorTabId": -1,
+          "cookieStoreId": "firefox-default",
+          "openerTabId": 1,
+          "url": "https://www.youtube.com/watch?v=h9mnlo4O-MM",
+          "title": "ЧЕМ Я ЗАНИМАЮСЬ? ДНИ ДЕВУШКИ на АРИЗОНА РП - YouTube",
+          "favIconUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtklEQVQ4T2NkoBAwUqifAW7AfwYGAaBhBlADHXAYfAAqfgGo8QOIDTYAqDkBSM0n0TWJQM0LGIGaQbaeJ1EzTLkhyIAAIG89mQYkggxoAGqux2rAgwdAzwF9dwDmdQxVjfgN+A80HgQ2bmRgKChgYAAZiAqINODgQYhLSDYApAFk84YNuIII7ALcgSgATBofwNGNC4ADkbJoBBlNUUKCuQ0tKYNcBUra6AAWn6hJGZ8nCclRnBsBzJ03KZWC+NsAAAAASUVORK5CYII="
+        }
+      }
+    },
+    "windowsNumber": 1,
+    "windowsInfo": {
+      "1": {
+        "id": 1,
+        "focused": true,
+        "top": 0,
+        "left": 0,
+        "width": 1920,
+        "height": 1008,
+        "incognito": false,
+        "type": "normal",
+        "state": "maximized",
+        "alwaysOnTop": false,
+        "title": "(4) Подписки - YouTube — Mozilla Firefox"
+      }
+    },
+    "tabsNumber": 14,
+    "name": "(4) Подписки - YouTube",
+    "date": 1701349043143,
+    "lastEditedTime": 1701349043143,
+    "tag": [],
+    "sessionStartTime": 1701347164237,
+    "id": "983005ab-d583-47dc-ba2b-9ca2adaff3f5"
+  }
+]
