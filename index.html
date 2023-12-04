@@ -25,9 +25,6 @@
                 <h2 class="r-fit-text">Кратко о том как работает файловая система</h2>
                 <img src="images/mem10.jpg" alt="">
             </section>
-            <section>
-                <img src="images/file-structure.webp" alt="">
-            </section>
             <section data-background-color="white">
                 Дизайн файловой системы
                 <img src="images/fs-design.png" alt="">
@@ -53,7 +50,7 @@
                 <img src="images/hard-links.png" alt="">
             </section>
             <section data-background-color="white">
-                <h1 class="r-fit-text">Что можем симулировать?</h1>
+                <h1 class="r-fit-text">Пример того, что можем симулировать?</h1>
                 <ul>
                     <li>Закончились inode 🪹</li>
                     <li>Ошибка чтения ❌</li>
@@ -62,101 +59,188 @@
                 </ul>
             </section>
             <section>
+                <img src="images/fault-tools.png" alt="">
+            </section>
+            <section>
                 <table>
                     <thead>
                         <tr>
                             <th>Инструмент</th>
-                            <th>Ссылка/Комменатарий</th>
+                            <th>Ссылка/Комментарий</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>CharybdeFS</td>
-                            <td><a href="https://github.com/scylladb/charybdefs">github</a></td>
+                            <td style="font-size: 24px;">
+                                <a href="https://github.com/scylladb/charybdefs">github</a>
+                                <br>
+                                На Ubuntu > 16 нет пакетов, а на 16 на текущий момент не компилируется
+                            </td>
                         </tr>
                         <tr>
                             <td>PetardFS</td>
-                            <td><a href="https://github.com/jrandall/petardfs">github</a></td>
-                        </tr>
-                        <tr>
-                            <td>UnreliableFS</td>
-                            <td><a href="https://github.com/ligurio/unreliablefs">github</a></td>
-                        </tr>
-                        <tr>
-                            <td>libeatmydata</td>
-                            <td><a href="https://github.com/stewartsmith/libeatmydata">github</a></td>
+                            <td style="font-size: 24px;">
+                                <a href="https://github.com/jrandall/petardfs">github</a>
+                                <br>
+                                Проект последний раз обновлялся 10 лет назад, трогать не стал
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </section>
-
             <section>
                 <table>
                     <thead>
                         <tr>
                             <th>Инструмент</th>
-                            <th>Ссылка/Комменатарий</th>
+                            <th>Ссылка/Комментарий</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>UnreliableFS</td>
+                            <td style="font-size: 24px;">
+                                <a href="https://github.com/ligurio/unreliablefs">github</a>
+                                <br>
+                                На текущий момент самая свежая с разными конфигами для сбоев. Подробнее далее
+                                <!-- TODO: Вставить ссылку на слайд где будет UnreliableFS  -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>libeatmydata</td>
+                            <td style="font-size: 24px;">
+                                <a href="https://github.com/stewartsmith/libeatmydata">github</a>
+                                <br>
+                                LD_PRELOAD, отключает все формы безопасной записи данных на диск(fsync, O_SYNC)
+                                <br>
+                                Мало функционала, запустить не получилось.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Инструмент</th>
+                            <th>Ссылка/Комментарий</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>cleancache</td>
-                            <td><a href="https://github.com/kahing/bin/blob/master/cleancache.c">github</a></td>
+                            <td style="font-size: 24px;">
+                                <a href="https://github.com/kahing/bin/blob/master/cleancache.c">github</a>
+                                <br>
+                                Удаляет содержимое файлов из кэша после использования(LD_PRELOAD)
+                                <br>
+                                Запускал, позволяет хорошо замедлить скорость работы
+                            </td>
                         </tr>
                         <tr>
-                            <td>Device Mapper</td>
-                            <td><a href="https://www.kernel.org/doc/Documentation/device-mapper/dm-flakey.txt">Kernel docs</a></td>
-                        </tr>
-                        <tr>
-                            <td>QEMU</td>
-                            <td><a href="https://github.com/qemu/qemu/blob/master/docs/devel/blkdebug.txt">github</a></td>
-                        </tr>
-                        <tr>
-                            <td>sysrq</td>
-                            <td><a href="https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html">github</a></td>
+                            <td>Device mapper</td>
+                            <td style="font-size: 24px;">
+                                <a href="https://www.kernel.org/doc/Documentation/device-mapper/dm-flakey.txt">Kernel.org</a>
+                                <br>
+                                Моделирование ненадежного поведения блочных устройств,
+                                Позволяет вам указать интервалы доступности и ненадежного поведения, а также функции,
+                                такие как игнорирование операций записи,
+                                сбой ввода-вывода при записи или повреждение определенных байтов данных в ненадежные периоды.
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </section>
-
             <section>
                 <table>
                     <thead>
                         <tr>
                             <th>Инструмент</th>
-                            <th>Ссылка/Комменатарий</th>
+                            <th>Ссылка/Комментарий</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>QEMU</td>
+                            <td style="font-size: 24px;">
+                                <a href="https://github.com/qemu/qemu/blob/master/docs/devel/blkdebug.txt">github</a>
+                                <br>
+                                Драйвер блока blkdebug - это механизм симуляции ошибок. Его можно
+                                использовать для симуляции ошибок блочных драйверах(Нет памяти/Ошибка чтения, записи..)
+                                <br><br>
+                                В ядре, поэтому быстро, но опасно и очень платформеннозависимо
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>sysrq</td>
+                            <td style="font-size: 24px;">
+                                <a href="https://www.kernel.org/doc/html/latest/admin-guide/sysrq.html">Kernel.org</a>
+                                <br>
+                                Команда "echo c > /proc/sysrq-trigger" запускает панику ядра, принудительно перезагружая систему в случае критической ошибки.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Инструмент</th>
+                            <th>Ссылка/Комментарий</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Linux kernel fault injection capabilities infrastructure</td>
-                            <td><a href="https://www.kernel.org/doc/html/latest/fault-injection/fault-injection.html">Kernel docs</a></td>
+                            <td style="font-size: 24px;">
+                                <a href="https://www.kernel.org/doc/html/latest/fault-injection/fault-injection.html">Kernel.org</a>
+                                <br>
+                                Симулирование ошибок в базовых блочных устройствах, включив параметр ядра FAIL_MAKE_REQUEST
+                            </td>
                         </tr>
                         <tr>
                             <td>libfiu</td>
-                            <td><a href="http://blitiri.com.ar/p/libfiu/">Link</a></td>
-                        </tr>
-                        <tr>
-                            <td>Linux kernel notifier fault injection</td>
-                            <td><a href="https://www.kernel.org/doc/html/latest/fault-injection/notifier-error-inject.html">github</a></td>
-                        </tr>
-                        <tr>
-                            <td>BSOD</td>
-                            <td><a href=" https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/forcing-a-system-crash-from-the-keyboard">github</a></td>
+                            <td style="font-size: 24px;">
+                                <a href="http://blitiri.com.ar/p/libfiu/">Ссылка на документацию</a>
+                                <br>
+                                (LD_PRELOAD) Замена posix api calls.<br>
+                                Минусы - несовместима даже с BSD и неудобный API
+                            </td>
                         </tr>
                     </tbody>
                 </table>
-            </section>  
-
-            <section>
-                <img src="images/fault-tools.png" alt="">
             </section>
-
             <section>
                 <h1 class="r-fit-text">Простой пример работы UnreliableFS</h1>
                 <img src="images/mem4.png" alt="">
             </section>
-
+            <section>
+                <h2 class="r-fit-text">FUSE - FileSystem in <b>USER</b> space</h2>
+                <img src="images/fuse.jpg" alt="">
+            </section>
+            <section>
+                <h1 class="r-fit-text">А это вообще кто-то использует?</h1>
+                <p class="r-fit-text">Существует несколько FUSE, которые способны принести тем, кто их применяет, реальную пользу. Вот некоторые из:</p>
+                <ul class="r-fit-text">
+                    <li><a href="https://hackaday.com/2019/12/17/linux-fu-stupid-ssh-tricks/">sshfs</a> — монтирует удалённую файловую систему, используя лишь ssh-доступ.</li>
+                    <li><a href="https://hackaday.com/2020/11/10/linux-fu-send-in-the-cloud-clones/">rclone</a> — позволяет организовывать доступ ко многим удалённым файловым системам и осуществлять их монтирование.</li>
+                    <li><a href="http://www.tagsistant.net/">tagsistant</a> — файловая система, основанная на тегах, облегчающая работу с большим количеством файлов.</li>
+                    <li><a href="https://linux.die.net/man/1/fuse-zip">fuse-zip</a> — позволяет монтировать zip-файлы в виде файловых систем.</li>
+                    <li><a href="https://www.presslabs.com/docs/code/gitfs/">gitfs</a> — позволяет монтировать в виде файловых систем git-репозитории.</li>
+                </ul>
+            </section>
+            <section>
+                <h2 class="r-fit-text">А как насчёт Windows?</h2>
+                <p class="r-fit-text">
+                    В Windows аналогичную функциональность предоставляет <a href="https://github.com/billziss-gh/winfsp">WinFsp</a>, включая слои совместимости с FUSE для упрощения 
+                    портирования существующего FUSE-кода.<br> 
+                    Другой вариант для Windows — проект <a href="https://github.com/dokan-dev/dokany/">Dokan</a>, предлагающий интерфейсы к своему 
+                    API для FUSE, хотя по результатам бенчмарков WinFsp обеспечивает более высокую производительность.
+                </p>
+            </section>
             <section>
                 <h1 class="r-fit-text">Установка UnreliableFS</h1>
                 <pre><code data-trim data-noescape>
@@ -182,11 +266,11 @@
                 <img src="images/supported-options.png" alt="">
             </section>
             <section>
-                <h2 class="r-fit-text">FUSE - FileSystem in <b>USER</b> space</h2>
-                <img src="images/fuse.jpg" alt="">
+                <h1 class="r-fit-text">Почему решил писать с нуля?</h1>
+                <h2 class="r-fit-text">В UnreliableFS много багов, проект хоть и свежий но не живой, поэтому проще под свои задачи используя удобное api написать свое</h2>
             </section>
             <section>
-                <h2 class="r-fit-text">Поднимаем свой Fuse на коленках</h2>
+                <h2 class="r-fit-text">Поднимаем свою файловую систему используя pyfuse</h2>
                 <pre><code data-line-numbers="21-28|30-40|1-88|" data-trim data-noescape style="font-size: 15px;">
 #!/usr/bin/env python
 
@@ -280,11 +364,11 @@ if __name__ == '__main__':
                 </code></pre>
             </section>
             <section>
-                <p>Запустим нашу файлуху</p>
+                <p>Запустим нашу файловую систему</p>
                 <img src="images/custom-fuse-python-working.png" alt="">
             </section>
             <section>
-                <p>Добавим все методы и чуть отрефакторим</p>
+                <p class="r-fit-text">Добавим все системные вызовы и перепишем код, сделав его читаемее</p>
                 <pre><code data-line-numbers="" data-trim data-noescape style="font-size: 15px;">
 #!/usr/bin/env python
 
@@ -434,7 +518,7 @@ if __name__ == '__main__':
             </section>
             <section>
                 <h1 class="r-fit-text">Поставим Postgres из исходников</h1>
-                <img src="images/mem12.jpg" alt="">
+                <img src="images/postgresql-15-installation.jpg" alt="">
             </section>
             <section>
                 <p>Перепишем чуть метод read</p>
@@ -454,14 +538,12 @@ if __name__ == '__main__':
             </section>
             <section>
                 <p>Запускаем файловую систему</p>
-                <p>Постгресу пофиг :C</p>
+                <p>Постгрес не подменяет системные вызовы?</p>
                 <img src="images/pofig.png" alt="">
             </section>
             <section>
-                <p>Т.е я провел эксперимент<br>
-                    сделал write внутри basedir не логирует
-                    сделал write того же файла внутри mntdir - логирует
-                    Возникает вопрос как заставить postgres делать это через mntdir?</p>
+                <h2 class="r-fit-text">Но почему так вышло?</h2>
+                <p>Я выяснил, если писать файл в basedir, файловая система не подменяет. Но как только пишешь в mntdir — всё логируется. <br>Как заставить PostgreSQL работать через mntdir, чтобы он тоже всё логировал?</p>
             </section>
             <section>
                 <p>Сам эксперимент</p>
@@ -469,7 +551,7 @@ if __name__ == '__main__':
                     $ echo "test str" > data/example.txt
                     $ echo "test str 2" > mntpoint/example.txt 
                 </code></pre>
-                <p>Логи файлухи:</p>
+                <p>Ошибка исправлена, логи файловой системы</p>
                 <pre><code data-line-numbers="" data-trim data-noescape style="font-size: 15px;">
                     $ python3 fs2.py data mntpoint            
                     /example.txt b'test str 2\n' 0 4
@@ -477,12 +559,15 @@ if __name__ == '__main__':
                 <p>Понял чтобы все заработало надо создавать директорию pgdata именно внутри mntpoint и на нее запускать pginit</p>
             </section>
             <section>
-                <p>Логи от Postgres полетели )</p>
+                <p>Логи системных вызовов от Postgres начали появлятся</p>
                 <img src="images/fun-big-logs.jpg" alt="">
             </section>
             <section>
-                <p>Не вставилось ((</p>
-                <img src="images/not-inserted.jpg" alt="">
+                <p>Вероятность ошибки read в 50% случаев привело к ошибке записи строчек в БД</p>
+                <img src="images/not-inserted.jpg" alt="" height="400px">
+            </section>
+            <section>
+                <h1 class="r-fit-text">Спасибо за внимание!</h1>
             </section>
         </div>
     </div>
