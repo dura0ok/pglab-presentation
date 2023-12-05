@@ -18,12 +18,35 @@
                 <h1 class="r-fit-text">Эмуляция сбоев файловых систем</h1>
                 <img src="images/mem5.png" alt="">
                 <aside class="notes">
-                    Shhh, these are your private notes 📝
+                    Тема моего сегодняшнего доклада эмуляция файловых сбоев файловых систем.
+                    Сначало кратко хочу рассказать в целом о том, что такое файловая система, потом сделаю обзор
+                    на инструменты, которые существуют и на чём они основаны. Покажу демонстрацию как некоторых инструментов, так и напишем пару примеров с нуля.
                 </aside>
             </section>
             <section>
                 <h2 class="r-fit-text">Кратко о том как работает файловая система</h2>
                 <img src="images/mem10.png" alt="">
+                <aside class="notes">
+                    ФС Linux — пространство раздела, поделенное на блоки определенного размера.
+                    Он определяется кратностью размеру сектора. 
+                    Соответственно, это могут быть 1024, 2048, 4096 или 8120 байт. 
+                    Важно помнить, что размер каждого блока известен изначально, ограничен максимальным размером ФС 
+                    и зависит от требований, которые выдвигает пользователь к каждому из блоков.
+                    Для обмена данными существует сразу два способа. 
+                    Первый из них — виртуальная файловая система (VFS). 
+                    С помощью данного типа ФС происходит совместная работа ядра и приложений, установленных в системе. 
+                    VFS позволяет пользователю работать, не учитывая особенности каждой конкретной ФС. 
+                    Второй способ — драйверы файловых систем. Именно они отвечают за связь между «железом» и софтом.
+                    Список файловых систем, которые поддерживаются ядром, находится в файле /proc/filesystems:
+                    В ФС каждый файл определяется конкретным индексом — 
+                    Inode (от англ. index node — «индексный дескриптор»).
+                    Но при этом один файл (речь о физическом размещении) может иметь сразу несколько имен (или путей). 
+                    И если в структуре ФС файлы будут отличаться, то на жестком диске им может соответствовать один файл. Это означает, что ФС Linux перекрестно-иерархична, а ветви дерева могут пересекаться.
+                    При монтировании происходит ассоциирование каталога с устройством, содержащим ФС (драйвер). 
+                    Соответствующая ссылка на устройство передается драйверу. Именно он и определяет ФС.
+                    Если процедура завершается успешно, ядро заносит информацию (каким драйвером обслуживаются и где расположены файлы и каталоги) в таблицу монтирования. 
+                    Она находится в файле /proc/mounts.
+                </aside>
             </section>
             <section data-background-color="white">
                 Дизайн файловой системы
@@ -83,7 +106,7 @@
                             <td style="font-size: 24px;">
                                 <a href="https://github.com/jrandall/petardfs">github</a>
                                 <br>
-                                Проект последний раз обновлялся 10 лет назад, трогать не стал
+                                Проект последний раз обновлялся 10 лет назад, пробовать запустить не стал
                             </td>
                         </tr>
                     </tbody>
@@ -235,9 +258,9 @@
             <section>
                 <h2 class="r-fit-text">А как насчёт Windows?</h2>
                 <p class="r-fit-text">
-                    В Windows аналогичную функциональность предоставляет <a href="https://github.com/billziss-gh/winfsp">WinFsp</a>, включая слои совместимости с FUSE для упрощения 
-                    портирования существующего FUSE-кода.<br> 
-                    Другой вариант для Windows — проект <a href="https://github.com/dokan-dev/dokany/">Dokan</a>, предлагающий интерфейсы к своему 
+                    В Windows аналогичную функциональность предоставляет <a href="https://github.com/billziss-gh/winfsp">WinFsp</a>, включая слои совместимости с FUSE для упрощения
+                    портирования существующего FUSE-кода.<br>
+                    Другой вариант для Windows — проект <a href="https://github.com/dokan-dev/dokany/">Dokan</a>, предлагающий интерфейсы к своему
                     API для FUSE, хотя по результатам бенчмарков WinFsp обеспечивает более высокую производительность.
                 </p>
             </section>
@@ -366,6 +389,122 @@ if __name__ == '__main__':
             <section>
                 <p>Запустим нашу файловую систему</p>
                 <img src="images/custom-fuse-python-working.png" alt="">
+            </section>
+            <section>
+                <p class="r-fit-text">Тот же самый код на C</p>
+                <pre><code data-line-numbers="" data-trim data-noescape style="font-size: 15px;">
+#define FUSE_USE_VERSION 30
+#include &lt;fuse.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;errno.h&gt;
+#include &lt;fcntl.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;dirent.h&gt;
+#include &lt;limits.h&gt;
+
+
+struct PassthroughData {
+    const char *root_path;
+};
+
+static int passthrough_getattr(const char *path, struct stat *stbuf, struct fuse_file_info *fi) {
+    struct PassthroughData *data = (struct PassthroughData *)fuse_get_context()->private_data;
+
+    char full_path[PATH_MAX];
+    snprintf(full_path, sizeof(full_path), "%s%s", data->root_path, path);
+
+    int res = lstat(full_path, stbuf);
+    if (res == -1)
+        return -errno;
+
+    return 0;
+}
+
+static int passthrough_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t offset, struct fuse_file_info *fi) {
+    struct PassthroughData *data = (struct PassthroughData *)fuse_get_context()->private_data;
+
+    char full_path[PATH_MAX];
+    snprintf(full_path, sizeof(full_path), "%s%s", data->root_path, path);
+
+    DIR *dp = opendir(full_path);
+    if (dp == NULL)
+        return -errno;
+
+    struct dirent *de;
+    while ((de = readdir(dp)) != NULL) {
+        if (filler(buf, de->d_name, NULL, 0))
+            break;
+    }
+
+    closedir(dp);
+    return 0;
+}
+
+static int passthrough_open(const char *path, struct fuse_file_info *fi) {
+    struct PassthroughData *data = (struct PassthroughData *)fuse_get_context()->private_data;
+
+    char full_path[PATH_MAX];
+    snprintf(full_path, sizeof(full_path), "%s%s", data->root_path, path);
+
+    int fd = open(full_path, fi->flags);
+    if (fd == -1)
+        return -errno;
+
+    fi->fh = fd;
+    return 0;
+}
+
+static int passthrough_read(const char *path, char *buf, size_t size, off_t offset, struct fuse_file_info *fi) {
+    double random_value = (double)rand() / RAND_MAX;
+
+    if (random_value < 0.5) {
+        return 0;
+    }
+
+    ssize_t res = pread(fi->fh, buf, size, offset);
+    if (res == -1) {
+        return -errno;
+    }
+
+    return res;
+}
+
+static struct fuse_operations passthrough_operations = {
+    .getattr = (int (*)(const char *, struct stat *))passthrough_getattr,
+    .readdir = passthrough_readdir,
+    .open = passthrough_open,
+    .read = passthrough_read,
+};
+
+int main(int argc, char *argv[]) {
+    if (argc != 3) {
+        fprintf(stderr, "Usage: %s <root> <mountpoint>\n", argv[0]);
+        exit(EXIT_FAILURE);
+    }
+
+    struct PassthroughData data;
+    data.root_path = realpath(argv[1], NULL);
+    if (data.root_path == NULL) {
+        perror("realpath");
+        exit(EXIT_FAILURE);
+    }
+
+    argc--;
+    argv++;
+    return fuse_main(argc, argv, &passthrough_operations, &data);
+}
+
+                </code></pre>
+            </section>
+            <section>
+                <p class="r-fit-text">Краткое руководство как запустить код на языке C</p>
+                <pre><code data-line-numbers="" data-trim data-noescape style="font-size: 15px;">
+               $ fusermount -u ~/workspace/c-fuse-exps/mntpoint 
+               $ gcc main.c -o main -lfuse -D_FILE_OFFSET_BITS=64
+               $ ./main bsdir mntpoint
+            </code></pre>
             </section>
             <section>
                 <p class="r-fit-text">Добавим все системные вызовы и перепишем код, сделав его читаемее</p>
@@ -521,7 +660,7 @@ if __name__ == '__main__':
                 <img src="images/postgresql-15-installation.jpg" alt="">
             </section>
             <section>
-                <p>Перепишем чуть метод read</p>
+                <p>Перепишем метод read</p>
                 <pre><code data-line-numbers="" data-trim data-noescape style="font-size: 15px;">
                     def read(self, path, length, offset, fh):
                         print(path, length, offset, fh)
@@ -567,7 +706,7 @@ if __name__ == '__main__':
                 <img src="images/not-inserted.jpg" alt="" height="400px">
             </section>
             <section>
-                <h1 class="r-fit-text">Спасибо за внимание!</h1>
+                <h1 class="r-fit-text">Спасибо за внимание!<br> QA?</h1>
             </section>
         </div>
     </div>
