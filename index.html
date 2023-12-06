@@ -67,7 +67,7 @@
             </section>
             <section data-background-color="white">
                 Дизайн INode
-                <img src="images/inode-design.jpg" alt="">
+                <img src="images/inode-design.png" alt="">
             </section>
             <section data-background-color="white">
                 <img src="images/hard-links.png" alt="">
@@ -237,10 +237,6 @@
                 </table>
             </section>
             <section>
-                <h1 class="r-fit-text">Простой пример работы UnreliableFS</h1>
-                <img src="images/mem4.png" alt="">
-            </section>
-            <section>
                 <h2 class="r-fit-text">FUSE - FileSystem in <b>USER</b> space</h2>
                 <img src="images/fuse.jpg" alt="">
             </section>
@@ -281,6 +277,10 @@
                 </code></pre>
             </section>
             <section>
+                <h1 class="r-fit-text">Простой пример работы UnreliableFS</h1>
+                <img src="images/mem4.png" alt="">
+            </section>
+            <section>
                 <h1 class="r-fit-text">Проверка работы UnreliableFS</h1>
                 <img src="images/example-simple-work.png" alt="">
             </section>
@@ -292,8 +292,25 @@
                 <h1 class="r-fit-text">Почему решил писать с нуля?</h1>
                 <h2 class="r-fit-text">В UnreliableFS много багов, проект хоть и свежий но не живой, поэтому проще под свои задачи используя удобное api написать свое</h2>
             </section>
+            <section data-background-color="white">
+                <h1 class="r-fit-text">Issues Unreliable fs</h1>
+                <img src="images/2023120602034.svg" alt="">
+            </section>
             <section>
-                <h2 class="r-fit-text">Поднимаем свою файловую систему используя pyfuse</h2>
+                <h2 class="r-fit-text">Поднимаем свою файловую систему используя pyfuse</h2>    
+                <aside class="notes">
+                    This Python expression creates a dictionary based on the provided file or directory attributes stored in the st object (presumably a stat object, representing file metadata). Here's what each attribute represents:
+
+1. st_atime: The time of last access (in seconds since the epoch).
+2. st_ctime: The time of last status change (in seconds since the epoch). This includes metadata changes such as permission changes.
+3. st_gid: The group ID of the file.
+4. st_mode: The file's mode (permissions).
+5. st_mtime: The time of last modification (in seconds since the epoch).
+6. st_nlink: The number of hard links to the file.
+7. st_size: The size of the file in bytes.
+8. st_uid: The user ID of the file owner.
+
+                </aside>
                 <pre><code data-line-numbers="21-28|30-40|1-88|" data-trim data-noescape style="font-size: 15px;">
 #!/usr/bin/env python
 
@@ -391,7 +408,7 @@ if __name__ == '__main__':
                 <img src="images/custom-fuse-python-working.png" alt="">
             </section>
             <section>
-                <p class="r-fit-text">Тот же самый код на C</p>
+                <p class="r-fit-text">Аналогичный код на C</p>
                 <pre><code data-line-numbers="" data-trim data-noescape style="font-size: 15px;">
 #define FUSE_USE_VERSION 30
 #include &lt;fuse.h&gt;
@@ -704,6 +721,55 @@ if __name__ == '__main__':
             <section>
                 <p>Вероятность ошибки read в 50% случаев привело к ошибке записи строчек в БД</p>
                 <img src="images/not-inserted.jpg" alt="" height="400px">
+            </section>
+            <section>
+                <p>Симуляция того что кончились Inode</p>
+                <pre><code data-line-numbers="" data-trim data-noescape style="font-size: 15px;">
+                    def create(self, path, mode, fi=None):
+                        if random.random() < 0.5:
+                            raise FuseOSError(errno.ENOSPC)
+                        ...
+                </code></pre>
+                <img src="images/inodes-empty-error.jpg" alt="">
+            </section>
+            <section>
+                <p>Симуляция того что кончились Inode в Postgres</p>
+                <pre><code data-line-numbers="" data-trim data-noescape style="font-size: 13px;">
+                    durachok=# CREATE TABLE random_names2 (
+                        name VARCHAR(1)                                         
+                    );
+                    ERROR:  could not create file "base/16384/24576": На устройстве не осталось свободного места
+                    durachok=# INSERT INTO random_names (name)
+                    SELECT chr((random() * 26)::integer + 65)::character varying
+                    FROM generate_series(1, 500000);
+                    ERROR:  could not read file "base/pgsql_tmp/pgsql_tmp57981.0": Неправильный дескриптор файла
+                    durachok=# INSERT INTO random_names (name)
+                    SELECT chr((random() * 26)::integer + 65)::character varying
+                    FROM generate_series(1, 10);
+                    INSERT 0 10
+                    durachok=#     
+                </code></pre>
+            </section>
+            <section>
+                <p>Гибкость тестирования Fuse</p>
+                <pre><code data-line-numbers="" data-trim data-noescape style="font-size: 13px;">
+                    def create(self, path, mode, fi=None):
+                        with open('t.txt', 'r') as file:
+                            first_character = file.read(1)
+            
+                            if random.random() < 0.5 and first_character == '1':
+                                raise FuseOSError(errno.ENOSPC)
+            
+                        ...
+                </code></pre>
+            </section>
+            <section>
+                <h1 style="font-size: 50px !important;">Итоги</h1>
+                <ul>
+                    <li>😭 Мне не удалось сломать Postgres</li>
+                    <li>🛠 Посмотрел на доступные инструменты в области симуляции ошибок и попробовал их</li>
+                    <li>🍏 Написал свою файловую в UserSpace, которую можно развивать и возможно такой fuzzing в будущем принесет плоды</li>
+                </ul>
             </section>
             <section>
                 <h1 class="r-fit-text">Спасибо за внимание!<br> QA?</h1>
